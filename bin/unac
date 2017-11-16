@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use App::FilterUtils::2base;
+use App::FilterUtils::unac;
 # VERSION
 
-App::FilterUtils::2base->run();
+App::FilterUtils::unac->run();
 
 exit 0;
 
@@ -14,11 +14,11 @@ __END__
 
 =head1 Command-line utility
 
-2base - Convert bases
+unac - Strip accents and other Non-Spacing Marks
 
 =head1 DOCUMENTATION
 
-See 'L<perldoc App::FilterUtils::2base|App::FilterUtils::2base>' or '2base --help' for documentation.
+See 'L<perldoc App::FilterUtils::unac|App::FilterUtils::unac>' or 'unac --help' for documentation.
 
 =head1 AUTHOR
 

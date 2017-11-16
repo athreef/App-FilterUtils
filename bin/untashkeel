@@ -1,12 +1,12 @@
-#!/usr/bin/perl -CA
+#!/usr/bin/perl -CASD
 
 use strict;
 use warnings;
 
-use App::FilterUtils::2base;
+use App::FilterUtils::untashkeel;
 # VERSION
 
-App::FilterUtils::2base->run();
+App::FilterUtils::untashkeel->run();
 
 exit 0;
 
@@ -14,11 +14,11 @@ __END__
 
 =head1 Command-line utility
 
-2base - Convert bases
+untashkeel - Strip all Tashkeel from Arabic input
 
 =head1 DOCUMENTATION
 
-See 'L<perldoc App::FilterUtils::2base|App::FilterUtils::2base>' or '2base --help' for documentation.
+See 'L<perldoc App::FilterUtils::untashkeel|App::FilterUtils::untashkeel>' or 'untashkeel --help' for documentation.
 
 =head1 AUTHOR
 

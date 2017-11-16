@@ -1,3 +1,9 @@
+use strict;
+use warnings;
+package App::FilterUtils;
+# ABSTRACT: Command-line filter utilities
+# VERSION
+
 =pod
 
 =encoding utf8
@@ -77,3 +83,4 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
+

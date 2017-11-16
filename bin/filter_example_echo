@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use App::FilterUtils::2base;
+use App::FilterUtils::filter_example_echo;
 # VERSION
 
-App::FilterUtils::2base->run();
+App::FilterUtils::filter_example_echo->run();
 
 exit 0;
 
@@ -14,11 +14,11 @@ __END__
 
 =head1 Command-line utility
 
-2base - Convert bases
+filter_example_echo - Echo input
 
 =head1 DOCUMENTATION
 
-See 'L<perldoc App::FilterUtils::2base|App::FilterUtils::2base>' or '2base --help' for documentation.
+See 'L<perldoc App::FilterUtils::filter_example_echo|App::FilterUtils::filter_example_echo>' or 'filter_example_echo --help' for documentation.
 
 =head1 AUTHOR
 

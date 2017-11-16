@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use App::FilterUtils::2base;
+use App::FilterUtils::2u;
 # VERSION
 
-App::FilterUtils::2base->run();
+App::FilterUtils::2u->run();
 
 exit 0;
 
@@ -14,11 +14,11 @@ __END__
 
 =head1 Command-line utility
 
-2base - Convert bases
+2u - Show Unicode charnames
 
 =head1 DOCUMENTATION
 
-See 'L<perldoc App::FilterUtils::2base|App::FilterUtils::2base>' or '2base --help' for documentation.
+See 'L<perldoc App::FilterUtils::2u|App::FilterUtils::2u>' or '2u --help' for documentation.
 
 =head1 AUTHOR
 

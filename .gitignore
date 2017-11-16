@@ -1,6 +1,6 @@
 .build/
 *.sw*
 .DS_Store
-App-2base-*/
-App-2base-*.tar.gz
+App-FilterUtils-*/
+App-FilterUtils-*.tar.gz
 

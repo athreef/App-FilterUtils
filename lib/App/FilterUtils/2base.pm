@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package App::2base;
-# ABSTRACT: Comand-line utility for converting bases
+package App::FilterUtils::2base;
+# ABSTRACT: Convert bases
 # VERSION
 use base 'App::Cmd::Simple';
 use utf8;
@@ -19,7 +19,7 @@ use Math::BaseCnv;
 
 =head1 NAME
 
-2base - Command-line utility for converting bases
+2base - Convert bases
 
 =head1 SYNOPSIS
 
@@ -28,17 +28,31 @@ use Math::BaseCnv;
 
 =head1 OPTIONS
 
+=head2 thousands / t
+
+Use SI thousands prefixes instead of binary ones
+
+    $ 2base -t 10 1K
+    1000
+
+=head2 delimiters / d
+
+Use delimiters for bigger numbers
+
+    $ 2base -d 2 100000
+    1_1000_0110_1010_0000
+
 =head2 version / v
 
 Shows the current version number
 
-    % highlight --version
+    $ 2base --version
 
 =head2 help / h
 
 Shows a brief help message
 
-    % highlight --help
+    $ 2base --help
 
 =cut
 
@@ -46,7 +60,7 @@ sub usage_desc { "2base %o <base> [number ...]" }
 
 sub opt_spec {
     return (
-        [ 'thousands|t'  => "Use ISO thousands prefixes instead of binary ones" ],
+        [ 'thousands|t'  => "Use SI thousands prefixes instead of binary ones" ],
         [ 'delimiters|d' => "Use delimiters for bigger numbers"                 ],
         [ 'version|v'    => "show version number"                               ],
         [ 'help|h'       => "display a usage message"                           ],
@@ -56,34 +70,26 @@ sub opt_spec {
 sub validate_args {
     my ($self, $opt, $args) = @_;
 
-    if ($opt->{'help'} || !$args) {
+    if ($opt->{'help'} || !@$args) {
         my ($opt, $usage) = describe_options(
             usage_desc(),
             $self->opt_spec(),
         );
         print $usage;
         print "\n";
-        print "For more detailed help see 'perldoc 2base'\n";
+        print "For more detailed help see 'perldoc App::FilterUtils::2base'\n";
 
         print "\n";
         exit;
     }
     elsif ($opt->{'version'}) {
-        print $App::2base::VERSION, "\n";
+        print $App::FilterUtils::2base::VERSION, "\n";
         exit;
-    }
-
-    if (!@$args && !$opt->{'awesome'}) {
-        $self->usage_error(
-            "No arguments given!\n" .
-            "What do you want me to do?\n"
-        );
     }
 
     return;
 }
 
-use Data::Dumper;
 sub execute {
     my ($self, $opt, $args) = @_;
 
@@ -122,7 +128,7 @@ __END__
 
 =head1 GIT REPOSITORY
 
-L<http://github.com/athreef/App-2base>
+L<http://github.com/athreef/App-FilterUtils>
 
 =head1 SEE ALSO
 
