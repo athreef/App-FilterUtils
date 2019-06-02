@@ -78,6 +78,7 @@ sub execute {
     my $readarg = @$args ? sub { shift @$args } : sub { <STDIN> };
     while (defined ($_ = $readarg->())) {
         chomp;
+        $_ = oct if /^0/;
         print format_bytes($_), "\n";
     }
 
