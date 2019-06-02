@@ -7,7 +7,7 @@ use base 'App::Cmd::Simple';
 use utf8;
 use charnames qw();
 use open qw( :encoding(UTF-8) :std );
-use Module::Load qw(load);
+
 use Getopt::Long::Descriptive;
 
 use utf8;
